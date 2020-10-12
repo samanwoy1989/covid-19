@@ -301,7 +301,7 @@ rm(eg,
 # Result 05: Figure 4A, 4B: Sample level
 # NETosis expression with NLR
 #-----------------------------------------------------------
-x11();par(mfrow=c(2,1), mar=c(7,5,4,2), lend=2)
+x11();par(mfrow=c(2,1), mar=c(6,5,3,1), lend=2)
 
 # bar graph of NLR; do not draw
 # only to get the position of the barplot
@@ -323,15 +323,17 @@ boxplot(gexp,
         ylab="Average  Log2 gene \nexpression of NETosis",
         at = as.vector(b))
 abline(h=0, lwd=2, lty=3)
-legend(x="topright", legend=c("Moderate Illness","Severe Illness"),
-       fill=c("blue","red"), bty="n")
-mtext(side=3, text="A", cex=3, at=-2, line=1.5)
+legend(x="top", horiz = T,legend=c("Severe Illness", "Moderate Illness"),
+       fill=c("red", "blue"), bty="n")
+mtext(side=3, text="A", cex=2, at=-2, line=1.5)
 rm(xcon, gexp, disease.severity, mycols)
 
 plotLogical = TRUE
 source("Rcode/analyse_NLR_in_Duke.R")
 box()
-mtext(side=3, text="B", cex=3, at=-2, line=1.5)
+legend(x="top", horiz = T,legend=c("Severe Illness", "Moderate Illness"),
+       fill=c("red", "blue"), bty="n")
+mtext(side=3, text="B", cex=2, at=-2, line=1.5)
 #graphics.off()
 
 
